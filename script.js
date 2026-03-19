@@ -111,12 +111,10 @@
         <div class="modal-section-body">${nl2br(esc(job.requirements))}</div>
       </div>`;
 
-    // 応募フォームの職種を自動選択
-    const sel = document.getElementById('jobTitle');
-    if (sel) {
-      for (let i = 0; i < sel.options.length; i++) {
-        if (sel.options[i].value === job.title) { sel.selectedIndex = i; break; }
-      }
+    // モーダルの「応募する」ボタンに職種をURLパラメータで渡す
+    const applyBtn = document.getElementById('modalApplyBtn');
+    if (applyBtn) {
+      applyBtn.href = 'apply.html?job=' + encodeURIComponent(job.title);
     }
 
     overlay.classList.add('open');
