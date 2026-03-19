@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>応募フォーム | KT Group 採用情報</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="画像/KTGroup_tate.png" alt="KT Group" class="logo-img">
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html#about">会社の魅力</a>
+        <a href="index.html#jobs">求人情報</a>
+        <a href="index.html#flow">応募の流れ</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">お問い合わせ</a>
+      </nav>
+      <div class="header-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <a href="index.html#jobs" class="btn-cta">
+        求人情報を見る
+        <span class="btn-cta-arrow">→</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- パンくずリスト -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="index.html">トップ</a>
+      <span>›</span>
+      <span>応募フォーム</span>
+    </div>
+  </div>
+
+  <!-- 応募フォーム -->
+  <section class="apply apply-page">
+    <div class="container">
+
+      <!-- 応募先の求人表示 -->
+      <div class="apply-job-banner" id="applyJobBanner" style="display:none;">
+        <span class="apply-job-label">応募職種</span>
+        <span class="apply-job-title" id="applyJobTitle"></span>
+      </div>
+
+      <h1 class="section-title">応募フォーム</h1>
+      <p class="section-sub">以下の項目をご記入の上、送信してください。担当者より3営業日以内にご連絡いたします。</p>
+
+      <form class="apply-form" id="applyForm"
+            action="https://formspree.io/f/xgondebk"
+            method="POST">
+
+        <input type="hidden" name="_subject" value="【求人応募】KTグループ 採用サイトより">
+        <input type="hidden" name="_next" value="">
+
+        <div class="form-grid">
+          <div class="form-group required">
+            <label for="jobTitle">応募職種</label>
+            <select id="jobTitle" name="応募職種" required>
+              <option value="">選択してください</option>
+            </select>
+          </div>
+          <div class="form-group required">
+            <label for="name">氏名</label>
+            <input type="text" id="name" name="氏名" placeholder="例：山田 太郎" required>
+          </div>
+          <div class="form-group required">
+            <label for="furigana">フリガナ</label>
+            <input type="text" id="furigana" name="フリガナ" placeholder="例：ヤマダ タロウ" required>
+          </div>
+          <div class="form-group">
+            <label for="birthdate">生年月日</label>
+            <input type="date" id="birthdate" name="生年月日">
+          </div>
+          <div class="form-group">
+            <label for="gender">性別</label>
+            <select id="gender" name="性別">
+              <option value="">選択してください</option>
+              <option>男性</option>
+              <option>女性</option>
+              <option>回答しない</option>
+            </select>
+          </div>
+          <div class="form-group required">
+            <label for="phone">電話番号</label>
+            <input type="tel" id="phone" name="電話番号" placeholder="例：090-0000-0000" required>
+          </div>
+          <div class="form-group required">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="メールアドレス" placeholder="例：example@mail.com" required>
+          </div>
+          <div class="form-group required">
+            <label for="address">現住所</label>
+            <input type="text" id="address" name="現住所" placeholder="例：〇〇県〇〇市〇〇町" required>
+          </div>
+          <div class="form-group">
+            <label for="education">最終学歴</label>
+            <input type="text" id="education" name="最終学歴" placeholder="例：〇〇大学 〇〇学部 卒業">
+          </div>
+          <div class="form-group">
+            <label for="preferredType">希望雇用形態</label>
+            <select id="preferredType" name="希望雇用形態">
+              <option value="">選択してください</option>
+              <option>正社員</option>
+              <option>パート・アルバイト</option>
+              <option>契約社員</option>
+              <option>どちらでもよい</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group full required">
+          <label for="motivation">志望動機</label>
+          <textarea id="motivation" name="志望動機" rows="5" placeholder="志望動機をご記入ください" required></textarea>
+        </div>
+        <div class="form-group full">
+          <label for="experience">職歴・経験</label>
+          <textarea id="experience" name="職歴・経験" rows="4" placeholder="お持ちの職歴・経験をご記入ください（お持ちの方のみ）"></textarea>
+        </div>
+        <div class="form-group full">
+          <label for="notes">その他連絡事項</label>
+          <textarea id="notes" name="その他連絡事項" rows="3" placeholder="その他ご連絡事項があればご記入ください"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <p class="form-note">※ <span class="required-mark">必須</span> の項目は必ずご記入ください</p>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span id="submitText">応募する</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- 送信完了メッセージ -->
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✅</div>
+        <h3>応募を受け付けました</h3>
+        <p>担当者より3営業日以内にご連絡いたします。<br>しばらくお待ちください。</p>
+        <a href="index.html" class="btn-primary" style="margin-top:32px; display:inline-block;">
+          トップページに戻る
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="index.html" class="logo">
+          <img src="画像/KTGroup_tate.png" alt="KT Group" class="logo-img logo-img-footer">
+        </a>
+        <p class="footer-copy">© 2025 KT Group. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="jobs.js"></script>
+  <script src="apply.js"></script>
+</body>
+</html>
